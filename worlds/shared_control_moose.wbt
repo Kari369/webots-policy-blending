@@ -1,0 +1,200 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/SandyGround.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/clearpath/moose/protos/Moose.proto"
+
+WorldInfo {
+  info [
+    "Uneven terrain demo using an ElevationGrid to model the terrain and a"
+    "Clearpath moose."
+  ]
+  title "Uneven Terrain"
+  CFM 0.0003
+  ERP 0.4
+  basicTimeStep 4
+  defaultDamping Damping {
+  }
+  lineScale 0.2
+  contactProperties [
+    ContactProperties {
+      material1 "wheel"
+      material2 "moose wheel"
+      coulombFriction [
+        4
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.2897 0.2897 0.9122 1.6628
+  position -2.7 -20 12
+  near 1
+  follow "moose"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  luminosity 0.8
+}
+DEF PLANE Solid {
+  children [
+    Shape {
+      appearance SandyGround {
+        textureTransform TextureTransform {
+          rotation 0.2
+          scale 200 200
+        }
+      }
+      geometry DEF PLANE_SHAPE Plane {
+        size 2000 2000
+      }
+    }
+  ]
+  name "plane"
+  boundingObject USE PLANE_SHAPE
+}
+Solid {
+  translation -11.9 -1.1 1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 2
+        radius 0.15
+      }
+    }
+  ]
+  name "goal G1"
+}
+Solid {
+  translation -2.7 3.2 1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 2
+        radius 0.15
+      }
+    }
+  ]
+  name "goal G2"
+}
+Solid {
+  translation 6.5 -1.1 1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 2
+        radius 0.15
+      }
+    }
+  ]
+  name "goal G3"
+}
+Solid {
+  translation -7.3 -4.95 0.6
+  children [
+    DEF OBSTACLE_SHAPE Shape {
+      appearance PBRAppearance {
+        baseColor 0.35 0.35 0.35
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 1.2
+        radius 0.5
+      }
+    }
+  ]
+  name "obstacle 1"
+  boundingObject Cylinder {
+    height 1.2
+    radius 0.5
+  }
+}
+Solid {
+  translation -2.7 -2.8 0.6
+  children [
+    USE OBSTACLE_SHAPE
+  ]
+  name "obstacle 2"
+  boundingObject Cylinder {
+    height 1.2
+    radius 0.5
+  }
+}
+Solid {
+  translation 1.9 -4.95 0.6
+  children [
+    USE OBSTACLE_SHAPE
+  ]
+  name "obstacle 3"
+  boundingObject Cylinder {
+    height 1.2
+    radius 0.5
+  }
+}
+Moose {
+  hidden position_0_0 2086.237563119498
+  hidden position_0_1 2080.454448418831
+  hidden position_0_2 2060.6592703551237
+  hidden position_0_3 2063.5201891843167
+  hidden position_0_4 2305.968306587422
+  hidden position_0_5 2307.3135842647
+  hidden position_0_6 2295.2179055500637
+  hidden position_0_7 2267.1997465688405
+  hidden linearVelocity_0 -3.808768723043391e-15 9.93352732431524e-16 -1.2144583708391502e-14
+  hidden angularVelocity_0 3.684844180405324e-16 4.735430664468145e-17 5.132427435188614e-17
+  hidden rotation_3 0 -0.9999999999999999 0 0.22004113587548085
+  hidden linearVelocity_3 3.649153064998036e-14 -8.022630493495763e-17 -5.903371547798008e-15
+  hidden angularVelocity_3 8.332522485659141e-16 6.092803784701394e-15 5.065783380451696e-17
+  hidden rotation_4 0 1 0 5.563073564791803
+  hidden linearVelocity_4 5.189813299570955e-14 2.2628482987775725e-16 -6.052818273339178e-15
+  hidden angularVelocity_4 5.582078356267979e-16 -3.4091173065955656e-15 5.040990354482319e-17
+  hidden rotation_5 0 1 0 0.22551039978068282
+  hidden linearVelocity_5 2.2147276780489208e-14 5.048452085825707e-16 6.835376356892236e-15
+  hidden angularVelocity_5 5.785151523910243e-16 2.5464027119747303e-14 5.12329773525654e-17
+  hidden rotation_6 0 -1 0 2.6354084294123132
+  hidden linearVelocity_6 9.82184187354207e-15 -1.9205079154319535e-15 6.630850497195466e-15
+  hidden angularVelocity_6 9.967815078371885e-16 3.323610203128241e-14 4.8781847355115995e-17
+  hidden rotation_7 0 -1 0 6.2438864546659065
+  hidden linearVelocity_7 4.900085928960899e-14 -1.2713147925635466e-14 -6.5690630329584656e-15
+  hidden angularVelocity_7 6.669902778493658e-16 2.336647256499052e-14 5.0813987934618266e-17
+  hidden rotation_8 0 -1 0 4.89860877738804
+  hidden linearVelocity_8 4.95678596566068e-14 -1.896403325724905e-14 -6.75000137200792e-15
+  hidden angularVelocity_8 7.777755001880353e-16 1.449935210841818e-14 5.056557247726778e-17
+  hidden rotation_9 0 -1 0 4.427916877664917
+  hidden linearVelocity_9 2.4252168660679328e-14 -7.517412598305578e-15 5.972921925498701e-15
+  hidden angularVelocity_9 4.0642978514461523e-16 3.008084558802568e-14 5.054323585071887e-17
+  hidden rotation_10 0 0.9999999999999999 0 5.253035984189379
+  hidden linearVelocity_10 7.271273517387947e-15 -1.376975520998288e-14 5.941116380042947e-15
+  hidden angularVelocity_10 1.823072633319056e-15 3.285295508598234e-14 4.945847193589461e-17
+  translation -2.7 -8.8 0.34283913661495513
+  rotation 0 0 1 1.5708
+  controller "moose_path_following"
+  bodySlot [
+    Compass {
+    }
+    GPS {
+    }
+  ]
+}

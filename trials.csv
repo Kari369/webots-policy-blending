@@ -1,0 +1,16 @@
+mode,intended_goal,reached_goal,success,time_s,path_m,collisions,inferred_goal,inference_correct
+no_inference,G3,G3,1,6.99,12.00,2,G3,1
+assisted,G2,G2,1,7.33,10.84,0,G2,1
+no_inference,G2,G2,1,7.02,10.67,0,G2,1
+manual,G3,G3,1,18.91,27.15,2,G3,1
+assisted,G2,G2,1,7.65,10.86,0,G2,1
+manual,G2,G2,1,8.91,13.97,0,G2,1
+assisted,G1,G1,1,7.34,10.73,0,G1,1
+no_inference,G2,G2,1,7.04,10.52,0,G2,1
+manual,G3,G3,1,7.60,12.52,0,G3,1
+assisted,G3,G3,1,9.04,13.41,0,G3,1
+manual,G2,G2,1,11.28,17.95,0,G3,0
+no_inference,G1,G1,1,7.34,10.82,0,G1,1
+manual,G1,G1,1,10.27,13.05,0,G1,1
+assisted,G3,G3,1,9.52,13.84,0,G3,1
+no_inference,G3,G3,1,7.63,12.13,1,G3,1
